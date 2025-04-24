@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Select Forecast Days</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container clearfix">
+        <h1>Select Forecast Days for {{ city }}</h1>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST">
+            <div class="day-buttons">
+                {% for day in [1,2,3,4,5] %}
+                <button type="submit" name="days" value="{{ day }}">
+                    {{ day }} Day Forecast
+                </button>
+                {% endfor %}
+            </div>
+        </form>
+
+        <div class="back-button-container">
+            <a href="{{ url_for('city_input') }}" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

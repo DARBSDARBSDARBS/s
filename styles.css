@@ -1,0 +1,120 @@
+body {
+    font-family: 'Serif';
+    line-height: 1.6;
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgba(128, 128, 128, 0.301);
+    border-radius: 4px;
+}
+.container {
+    max-width: 400px; 
+    margin: 0 0 0 20px; 
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+}
+h1 {
+    color: #000000;
+    text-align: left;
+    margin-bottom: 30px;
+    float: left;
+}
+.alert {
+    background-color: #fa7c87;
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 60%;
+}
+
+button:hover {
+    background-color: green;
+}
+
+.day-buttons {
+    display: grid;
+    gap: 13px;
+    margin-top: 20px;
+    width: 100%;
+    float: left;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+    width: 80%;
+    float: left;
+}
+
+.forecast-box {
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.temperature {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: cadetblue;
+}
+
+.conditions {
+    font-size: 18px;
+    color: cadetblue;
+}
+
+.back-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+    background-color: blue;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

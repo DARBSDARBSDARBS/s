@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ days }}-Day Forecast for {{ city }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container clearfix"> 
+        <h1>{{ days }}-Day Forecast for {{ city }}</h1>
+        
+        <div class="forecast-container">
+            {% for item in forecast %}
+            <div class="forecast-box" style="background-color: {{ loop.cycle('#E1F5FE', '#E8F5E9', '#FFF3E0', '#F3E5F5', '#E0F7FA') }};">
+                <h3>{{ item.datetime }}</h3>
+                <p class="temperature">{{ item.temp }}°C</p>
+                <p class="conditions">{{ item.weather }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="back-button-container">
+            <a href="{{ url_for('city_input') }}" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
